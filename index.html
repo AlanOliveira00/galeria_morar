@@ -338,58 +338,52 @@
     </main>
 
     <!-- Biografia Section -->
+    <!-- Biografia Section - Reimaginada (Safe for 14" screens) -->
     <section id="biografia"
-        class="relative z-20 bg-bg min-h-[100vh] py-24 md:py-32 lg:py-48 px-8 lg:px-16 xl:px-24 flex flex-col justify-center border-t border-primary/5">
-
-        <!-- Elemento de Fundo Decorativo Desktop (Malha fina) -->
-        <div
-            class="hidden lg:block absolute left-[41.666%] top-0 bottom-0 w-px bg-gradient-to-b from-primary/5 via-primary/10 to-transparent pointer-events-none">
+        class="relative z-20 bg-bg min-h-[100vh] py-24 md:py-32 lg:py-24 xl:py-48 px-6 md:px-12 lg:px-16 xl:px-24 flex flex-col justify-center border-t border-primary/5 overflow-hidden">
+        
+        <!-- Fundo Decorativo de Ruído para Luxo Tátil -->
+        <div class="absolute inset-0 pointer-events-none opacity-[0.02]"
+            style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E');">
         </div>
+        
+        <div class="max-w-[85rem] mx-auto w-full flex flex-col lg:flex-row-reverse items-center justify-between gap-12 lg:gap-0 relative z-10">
 
-        <div
-            class="max-w-[90rem] mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-16 lg:gap-24 xl:gap-32 items-center lg:items-start relative z-10">
-
-            <!-- Coluna da Foto (Desk: Efeito Sticky e Emoldurado Flutuante) -->
-            <div class="col-span-1 md:col-span-5 relative group overflow-hidden lg:sticky lg:top-32 xl:top-40">
-                <div
-                    class="absolute inset-0 bg-primary/5 transition-colors duration-700 z-10 pointer-events-none mix-blend-overlay">
+            <!-- Coluna da Foto (Canto Direito com Imersão) -->
+            <div class="w-full lg:w-6/12 xl:w-5/12 relative group z-0 reveal-bio-img">
+                <div class="relative w-full aspect-[3/4] lg:aspect-[4/5] overflow-hidden border border-primary/20 lg:border-primary/10 box-glow shadow-[0_0_80px_rgba(0,0,0,0.8)] lg:shadow-2xl">
+                    <img alt="Flávio Morar"
+                        class="w-full h-full object-cover object-center transition-all duration-[2s] ease-out select-none scale-105 group-hover:scale-100"
+                        id="bio-img" src="@assets/raw_files/IMG_3695.JPEG" />
+                    <!-- Degrade inferior estilo revista sumindo a foto -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050506] via-transparent to-transparent opacity-60 pointer-events-none"></div>
                 </div>
-                <div
-                    class="relative aspect-[3/4] lg:aspect-[4/5] overflow-hidden border border-primary/10 lg:border-primary/20 p-2 lg:p-4 box-glow lg:shadow-[0_20px_100px_rgba(0,0,0,0.8)] reveal-bio-img rounded-sm">
-                    <div class="w-full h-full overflow-hidden relative bg-[#111113]">
-                        <img alt="Flávio Morar"
-                            class="w-full h-full object-cover object-center transition-all duration-[2s] ease-out select-none scale-105"
-                            id="bio-img" src="@assets/raw_files/IMG_3695.JPEG" />
-                    </div>
-                </div>
-                <!-- Detalhe tipográfico na foto (Subliminar) -->
-                <div
-                    class="absolute -bottom-4 -left-4 md:-left-8 lg:-left-12 xl:-left-16 text-primary/[0.03] lg:text-primary/[0.015] font-serif text-8xl md:text-9xl lg:text-[9rem] xl:text-[12rem] font-bold select-none pointer-events-none italic z-0 -rotate-2">
+                
+                <!-- Letreiro "Morar" gigante vazando pela esquerda -->
+                <div class="absolute -bottom-8 -left-8 lg:-bottom-12 lg:-left-48 text-primary/[0.04] lg:text-primary/[0.02] font-serif text-8xl md:text-9xl lg:text-[10rem] xl:text-[14rem] font-bold select-none pointer-events-none italic z-0 -rotate-2 whitespace-nowrap">
                     Morar.
                 </div>
             </div>
 
-            <!-- Coluna de Texto -->
-            <div class="col-span-1 md:col-span-7 flex flex-col justify-center text-left z-10 lg:pt-10">
-                <span
-                    class="text-xs md:text-sm lg:text-base uppercase tracking-[0.4em] font-medium text-secondary mb-8 lg:mb-12 block reveal-bio-text">
+            <!-- Caixa de Texto Flutuante de Vidro (Safeguard de Quebra de Texto) -->
+            <div class="w-full lg:w-7/12 flex flex-col justify-center text-left z-20 lg:-mr-16 xl:-mr-24 lg:bg-[#08080a]/90 lg:backdrop-blur-2xl px-2 py-4 lg:p-12 xl:p-16 lg:border lg:border-primary/10 lg:shadow-[0_30px_100px_rgba(0,0,0,1)] relative transition-all duration-700 hover:border-primary/20">
+                
+                <!-- Borda Superior Iluminada -->
+                <div class="hidden lg:block absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-primary/30 to-transparent"></div>
+
+                <span class="text-[10px] md:text-sm lg:text-xs xl:text-sm uppercase tracking-[0.4em] font-mono text-secondary/60 mb-6 lg:mb-8 block reveal-bio-text">
                     O Artista
                 </span>
 
-                <h2
-                    class="font-serif text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[5.5rem] 2xl:text-[6.5rem] leading-[1.05] tracking-tight text-primary mb-10 lg:mb-16 glow-effect reveal-bio-text">
-                    A matéria prima da <br class="hidden lg:block xl:hidden"><br class="hidden xl:block"> <span
-                        class="text-white/70 italic font-light">própria existência.</span>
+                <h2 class="font-serif text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-tight tracking-tight text-primary mb-8 glow-effect reveal-bio-text">
+                    A matéria prima da <br class="hidden sm:block lg:hidden xl:block"> <span class="text-white/80 italic font-light break-words">própria existência.</span>
                 </h2>
 
-                <div
-                    class="space-y-8 lg:space-y-12 font-light text-secondary/90 text-lg md:text-xl lg:text-xl xl:text-3xl leading-relaxed lg:leading-loose max-w-3xl">
+                <div class="space-y-6 lg:space-y-8 font-light text-secondary/90 text-lg md:text-xl lg:text-base xl:text-2xl leading-relaxed lg:leading-[1.8] xl:leading-loose">
                     <p class="reveal-bio-text">
                         <strong class="text-primary font-medium tracking-wide">Flávio Morar</strong> é artista visual
                         piauiense, nascido e criado em Parnaíba. Artista desde a infância, reconheceu-se como tal aos
-                        <span class="font-serif italic text-primary/80 text-2xl lg:text-4xl xl:text-5xl align-baseline px-1">20
-                            anos</span> — quando nasceu o
-                        “Morar”.
+                        <span class="font-serif italic text-primary/80 text-2xl lg:text-2xl xl:text-4xl px-1">20 anos</span> — quando nasceu o “Morar”.
                     </p>
                     <p class="reveal-bio-text">
                         Observador atento da vida cotidiana e da complexidade das sensações humanas, desenvolve sua
@@ -398,9 +392,9 @@
                     </p>
                 </div>
 
-                <div class="mt-12 lg:mt-24 reveal-bio-text">
-                    <!-- Linha decorativa imitando assinatura -->
-                    <div class="w-16 lg:w-32 h-[1px] bg-primary/40 mb-4 transition-all duration-700 hover:w-48"></div>
+                <div class="mt-10 lg:mt-12 xl:mt-16 reveal-bio-text">
+                    <!-- Linha fina geométrica expande no hover do card -->
+                    <div class="w-16 lg:w-20 xl:w-32 h-[1px] bg-primary/30 transition-all duration-1000 group-hover:w-full"></div>
                 </div>
             </div>
 
